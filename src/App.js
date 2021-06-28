@@ -6,7 +6,6 @@ import "./App.css";
 import logo from "./logo.svg";
 import {
   ScrollingProvider,
-  useScrollSection,
 } from 'react-scroll-section';
 
 const useStyles = makeStyles((theme) =>
