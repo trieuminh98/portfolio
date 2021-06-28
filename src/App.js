@@ -1,8 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
 import { createStyles, Grid, makeStyles } from "@material-ui/core";
 import LeftPanel from "components/left-panel/index";
 import Introduction from "features/introduction/pages";
+import { Section } from "react-scroll-section";
+import "./App.css";
+import logo from "./logo.svg";
+import {
+  ScrollingProvider,
+  useScrollSection,
+} from 'react-scroll-section';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -17,50 +22,84 @@ function App() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid container>
-        <Grid item xs={1}>
-          <LeftPanel />
-        </Grid>
-        <Grid item xs={11}>
-          <div className="App">
+    <ScrollingProvider scrollBehavior="smooth">
+      <div className={classes.root}>
+        <Grid container>
+          <Grid item xs={1}>
+            <LeftPanel />
+          </Grid>
+          <Grid item xs={11}>
+            <Section id="homePage" className="App">
               <Introduction />
-          </div>
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
-          <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
-          </div>
+            </Section>
+            <Section id="aboutMePage" className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  About Me Section
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+            </Section>
+            <Section id="experiencePage" className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Experience Section
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+            </Section>
+            <Section id="commentsPage" className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Comments Section
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact Me Section
+                </a>
+              </header>
+            </Section>
+            <Section id="contactMePage" className="App">
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="logo" />
+                <p>
+                  Contact Me Section
+                </p>
+                <a
+                  className="App-link"
+                  href="https://reactjs.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn React
+                </a>
+              </header>
+            </Section>
+          </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </ScrollingProvider>
   );
 }
 

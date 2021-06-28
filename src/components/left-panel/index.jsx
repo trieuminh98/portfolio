@@ -9,6 +9,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
 import MouseOverPopover from "components/mouse-over-popover";
 import React, { useState } from "react";
+import { useScrollSection } from "react-scroll-section";
 
 LeftPanel.propTypes = {};
 
@@ -61,14 +62,38 @@ function LeftPanel(_props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [content, setContent] = useState(null);
+  const honeSection = useScrollSection("homePage");
+  const aboutMeSection = useScrollSection("aboutMePage");
+  const experienceSection = useScrollSection("experiencePage");
+  const commentsSection = useScrollSection("commentsPage");
+  const contactMeSection = useScrollSection("contactMePage");
 
   const handleChange = (_event, newValue) => {
+    switch (newValue) {
+      case 0:
+        honeSection.onClick();
+        break;
+      case 1:
+        aboutMeSection.onClick();
+        break;
+      case 2:
+        experienceSection.onClick();
+        break;
+      case 3:
+        commentsSection.onClick();
+        break;
+      case 4:
+        contactMeSection.onClick();
+        break;
+      default:
+        return;
+    }
     setValue(newValue);
   };
 
   const handlePopoverOpen = (event) => {
     setAnchorEl(event.currentTarget);
-    setContent(event.currentTarget.name)
+    setContent(event.currentTarget.name);
   };
 
   const handlePopoverClose = () => {
@@ -110,6 +135,7 @@ function LeftPanel(_props) {
             aria-owns={open ? "mouse-over-popover" : undefined}
             onMouseEnter={handlePopoverOpen}
             onMouseLeave={handlePopoverClose}
+            section="about"
           />
           <Tab
             name={"experience"}
