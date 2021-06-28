@@ -5,6 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
+import TypedCursor from 'features/introduction/components/typed-cursor'
 
 IntroductionContainer.propTypes = {};
 
@@ -29,10 +30,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const handleClick = (link) => {
-  window.open(link);
-};
-
 function IntroductionContainer(props) {
   const classes = useStyles();
   return (
@@ -45,9 +42,7 @@ function IntroductionContainer(props) {
       <Typography variant="h1" component="h2" className={classes.margin}>
         Tin Triều Minh
       </Typography>
-      <Typography variant="h5" component="h5" className={classes.margin}>
-        I'm a Front-end Developer
-      </Typography>
+      <TypedCursor />
       <div className={classes.margin}>
         <Button target="_blank" href="https://www.facebook.com/trieuminh0806/" color="inherit">
           <FacebookIcon />

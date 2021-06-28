@@ -2,14 +2,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Typography from "@material-ui/core/Typography";
-import HomeIcon from '@material-ui/icons/Home';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import ContactMailIcon from '@material-ui/icons/ContactMail';
-import Paper from '@material-ui/core/Paper';
-import Collapse from '@material-ui/core/Collapse';
-
-import React from "react";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ContactMailIcon from "@material-ui/icons/ContactMail";
+import FeedbackIcon from "@material-ui/icons/Feedback";
+import HomeIcon from "@material-ui/icons/Home";
+import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
+import MouseOverPopover from "components/mouse-over-popover";
+import React, { useState } from "react";
 
 LeftPanel.propTypes = {};
 
@@ -22,14 +21,14 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   tabs: {
-    '& *': {
-      [theme.breakpoints.up('sm')]: {
-        minWidth: "0px"
+    "& *": {
+      [theme.breakpoints.up("sm")]: {
+        minWidth: "0px",
       },
       "&.Mui-selected": {
         color: "#f50057",
-      }
-    }
+      },
+    },
   },
   root: {
     display: "flex",
@@ -37,47 +36,56 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     justifyContent: "space-between",
     position: "fixed",
-    width: "20%"
   },
   tabsContainer: {
-    display: "flex"
+    display: "flex",
   },
   paperWrapper: {
     textAlign: "center",
-    '& div': {
+    "& div": {
       margin: " 9px -41px",
       width: "152px",
-      background: "#cccccc"
-    }
+      background: "#cccccc",
+    },
   },
   paper: {
-    padding: "8px"
-  }
+    padding: "8px",
+  },
+  popOver: {
+    marginLeft: "50px",
+  },
 }));
 
 function LeftPanel(_props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [content, setContent] = useState(null);
 
   const handleChange = (_event, newValue) => {
     setValue(newValue);
   };
 
-  const onToggleOpen = () => {
-    console.log('hello')
+  const handlePopoverOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+    setContent(event.currentTarget.name)
   };
+
+  const handlePopoverClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   return (
     <div className={classes.root}>
-      <Typography variant="h5">
-        Minh
-      </Typography>
+      <Typography variant="h5">Minh</Typography>
       <div className={classes.tabsContainer}>
         <Tabs
           orientation="vertical"
           value={value}
           onChange={handleChange}
-          aria-label="Vertical tabs example"
+          aria-label="Vertical tabs"
           TabIndicatorProps={{
             style: {
               display: "none",
@@ -85,32 +93,61 @@ function LeftPanel(_props) {
           }}
           className={classes.tabs}
         >
-          <Tab onMouseOver={onToggleOpen} onMouseOut={onToggleOpen} icon={<HomeIcon />} {...a11yProps(0)} />
-          <Tab icon={<AccountCircleIcon />} {...a11yProps(1)} />
-          <Tab icon={<WorkOutlineIcon />} {...a11yProps(2)} />
-          <Tab icon={<ContactMailIcon />} {...a11yProps(3)} />
+          <Tab
+            name={"home"}
+            icon={<HomeIcon />}
+            {...a11yProps(0)}
+            aria-haspopup="true"
+            aria-owns={open ? "mouse-over-popover" : undefined}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Tab
+            name={"aboutMe"}
+            icon={<AccountCircleIcon />}
+            {...a11yProps(1)}
+            aria-haspopup="true"
+            aria-owns={open ? "mouse-over-popover" : undefined}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Tab
+            name={"experience"}
+            icon={<WorkOutlineIcon />}
+            {...a11yProps(2)}
+            aria-haspopup="true"
+            aria-owns={open ? "mouse-over-popover" : undefined}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Tab
+            name={"comments"}
+            icon={<FeedbackIcon />}
+            {...a11yProps(4)}
+            aria-haspopup="true"
+            aria-owns={open ? "mouse-over-popover" : undefined}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <Tab
+            name={"contactMe"}
+            icon={<ContactMailIcon />}
+            {...a11yProps(3)}
+            aria-haspopup="true"
+            aria-owns={open ? "mouse-over-popover" : undefined}
+            onMouseEnter={handlePopoverOpen}
+            onMouseLeave={handlePopoverClose}
+          />
+          <MouseOverPopover
+            open={open}
+            handlePopoverClose={handlePopoverClose}
+            anchorEl={anchorEl}
+            content={content}
+          />
         </Tabs>
-        <div className={classes.paperWrapper}>
-          <Collapse in={false}>
-            <Paper elevation={3} className={classes.paper}>
-              Home
-            </Paper></Collapse>
-
-          <Paper elevation={3} className={classes.paper}>
-            About Me
-          </Paper>
-          <Paper elevation={3} className={classes.paper}>
-            Experience
-          </Paper>
-          <Paper elevation={3} className={classes.paper}>
-            Contact Me
-          </Paper>
-        </div>
       </div>
-      <Typography variant="h5">
-        Minh
-      </Typography>
-    </div >
+      <Typography variant="h5">Minh</Typography>
+    </div>
   );
 }
 

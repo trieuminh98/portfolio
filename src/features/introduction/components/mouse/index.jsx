@@ -24,7 +24,7 @@ const useStyles = makeStyles({
       display: "block",
       borderRadius: "16px",
       top: "10px",
-      left: "42%",
+      left: "37%",
     },
   });
 
