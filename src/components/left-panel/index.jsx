@@ -62,11 +62,11 @@ function LeftPanel(_props) {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [content, setContent] = useState(null);
-  const honeSection = useScrollSection("homePage");
-  const aboutMeSection = useScrollSection("aboutMePage");
-  const experienceSection = useScrollSection("experiencePage");
-  const commentsSection = useScrollSection("commentsPage");
-  const contactMeSection = useScrollSection("contactMePage");
+  const honeSection = useScrollSection("homeSection");
+  const aboutMeSection = useScrollSection("aboutMeSection");
+  const experienceSection = useScrollSection("experienceSection");
+  const commentsSection = useScrollSection("commentsSection");
+  const contactMeSection = useScrollSection("contactMeSection");
 
   const handleChange = (_event, newValue) => {
     switch (newValue) {

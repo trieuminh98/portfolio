@@ -36,7 +36,7 @@ const useStyles = makeStyles({
 function Mouse() {
   let [top, setTop] = useState(10);
   let [isIncrease, setIsIncrease] = useState(true);
-  const aboutMeSection = useScrollSection("aboutMePage");
+  const aboutMeSection = useScrollSection("aboutMeSection");
 
   useEffect(() => {
     const changePosition = setInterval(() => {

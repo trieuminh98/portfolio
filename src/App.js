@@ -28,10 +28,10 @@ function App() {
             <LeftPanel />
           </Grid>
           <Grid item xs={11}>
-            <Section id="homePage" className="App">
+            <Section id="homeSection" className="App">
               <Introduction />
             </Section>
-            <Section id="aboutMePage" className="App">
+            <Section id="aboutMeSection" className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
@@ -47,7 +47,7 @@ function App() {
                 </a>
               </header>
             </Section>
-            <Section id="experiencePage" className="App">
+            <Section id="experienceSection" className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
@@ -63,7 +63,7 @@ function App() {
                 </a>
               </header>
             </Section>
-            <Section id="commentsPage" className="App">
+            <Section id="commentsSection" className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
@@ -79,7 +79,7 @@ function App() {
                 </a>
               </header>
             </Section>
-            <Section id="contactMePage" className="App">
+            <Section id="contactMeSection" className="App">
               <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>

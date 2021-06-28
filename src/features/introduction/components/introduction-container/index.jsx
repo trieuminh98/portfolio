@@ -6,7 +6,7 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import React from "react";
 import TypedCursor from 'features/introduction/components/typed-cursor'
-import { useScrollSection } from "react-scroll-section";
+import HireMeButton from 'features/introduction/components/hire-me-button'
 
 IntroductionContainer.propTypes = {};
 
@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
 
 function IntroductionContainer(props) {
   const classes = useStyles();
-  const contactMeSection = useScrollSection("contactMePage");
 
   return (
     <div className={classes.introductionContainer}>
@@ -57,14 +56,7 @@ function IntroductionContainer(props) {
           <InstagramIcon />
         </Button>
       </div>
-      <Button
-        variant="contained"
-        color="secondary"
-        className={classes.borderRadius}
-        onClick={() => { contactMeSection.onClick() }}
-      >
-        Hire me
-      </Button>
+      <HireMeButton />
     </div>
   );
 }
