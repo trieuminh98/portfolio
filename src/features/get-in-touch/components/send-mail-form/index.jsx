@@ -1,13 +1,12 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import InputField from 'components/form-control/input-field';
-import InputFieldBigSize from 'components/form-control/input-field-big-size';
-import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
-import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import CustomButton from 'components/button/index';
+import InputField from 'components/form-control/input-field';
+import InputFieldBigSize from 'components/form-control/input-field-big-size';
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
 SendMailForm.propTypes = {};
 
