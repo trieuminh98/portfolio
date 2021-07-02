@@ -17,9 +17,9 @@ const useStyles = makeStyles(() => ({
 
 function CustomButton(props) {
   const classes = useStyles();
-  const {content,  handleOnClick } = props;
+  const {content, type = '',  handleOnClick } = props;
   return (
-    <Button variant='contained' color='secondary' className={classes.root} onClick={handleOnClick}>
+    <Button type={type} variant='contained' color='secondary' className={classes.root} onClick={handleOnClick}>
       {content}
     </Button>
   );

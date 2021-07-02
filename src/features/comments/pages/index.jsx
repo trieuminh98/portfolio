@@ -26,7 +26,7 @@ function Comments() {
     isHidden && (
       <Container maxWidth='lg' className={classes.root}>
         <Title title={'The Cute Comments'} />
-        <Carousel showThumbs={false} showStatus={false}>{contentContainer}</Carousel>
+        <Carousel autoPlay={true} infiniteLoop={true} showThumbs={false} showStatus={false}>{contentContainer}</Carousel>
       </Container>
     )
   );

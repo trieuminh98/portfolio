@@ -54,10 +54,10 @@ function ContentContainer(props) {
               <Avatar alt={img.alt} src={img.src} className={classes.large} />
             </Grid>
             <Grid className={classes.comments} item xs={8}>
-              <Typography variant='h4' component='p'>
+              <Typography variant='h4' component='h4'>
                 {comment}
               </Typography>
-              <Typography className={classes.title} variant='h7' component='p'>
+              <Typography className={classes.title} variant='h6' component='h6'>
                 {title}
               </Typography>
             </Grid>

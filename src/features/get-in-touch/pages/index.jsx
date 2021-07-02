@@ -4,6 +4,7 @@ import Container from '@material-ui/core/Container';
 import Title from 'components/title';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import SendMailFrom from 'features/get-in-touch/components/send-mail-form';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,10 @@ const useStyles = makeStyles((theme) => ({
 function GetInTouch(_props) {
   const classes = useStyles();
 
+  const handleSendMailForm = (values) => {
+      console.log('Submit:', values);
+  }
+
   return (
     <div>
       <Container maxWidth='lg' className={classes.root}>
@@ -30,19 +35,11 @@ function GetInTouch(_props) {
             </Typography>
             <div className={classes.space}></div>
             <Typography variant='subtitle2' component='p'>
-              Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your
-              visions.
+              Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions. Send me an email.
             </Typography>
           </Grid>
           <Grid item xs={8}>
-            <Grid container spacing={3}>
-              <Grid item xs={4}>
-
-              </Grid>
-              <Grid item xs={8}>
-
-              </Grid>
-            </Grid>
+            <SendMailFrom onSubmit={handleSendMailForm}/>
           </Grid>
         </Grid>
       </Container>

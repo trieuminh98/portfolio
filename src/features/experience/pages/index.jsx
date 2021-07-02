@@ -75,7 +75,7 @@ function Experiences() {
                 <Typography variant='h5' component='h5'>
                   Project: Famous Insurance Company
                 </Typography>
-                <Typography variant='body1' component='p'>
+                <Typography variant='body1' component='ul'>
                   <ul>
                     <li>Application Development & Management.</li>
                     <li>Develop software using the Agile Scrum model.</li>
@@ -118,7 +118,7 @@ function Experiences() {
                 <Typography variant='h5' component='h3'>
                   Project: Autralia Rails
                 </Typography>
-                <Typography variant='body1' component='p'>
+                <Typography variant='body1' component='ul'>
                   <ul>
                     <li>Application Development & Management.</li>
                     <li>Taking the front-end position of project in Sharepoint platform</li>
