@@ -116,7 +116,7 @@ function Experiences() {
                   05/2019 - 07/2021
                 </Typography>
                 <Typography variant='h5' component='h3'>
-                  Project: Autralia Rails
+                  Project: Australia's rail services
                 </Typography>
                 <Typography variant='body1' component='ul'>
                   <ul>
