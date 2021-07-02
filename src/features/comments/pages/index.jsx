@@ -20,12 +20,13 @@ function Comments() {
   const contentContainer = commentsData.map(({ comment, title, img }, index) => {
     return <ContentContainer key={index} comment={comment} title={title} img={img} />;
   });
+  
 
   return (
     isHidden && (
       <Container maxWidth='lg' className={classes.root}>
         <Title title={'The Cute Comments'} />
-        <Carousel showStatus={false}>{contentContainer}</Carousel>
+        <Carousel showThumbs={false} showStatus={false}>{contentContainer}</Carousel>
       </Container>
     )
   );

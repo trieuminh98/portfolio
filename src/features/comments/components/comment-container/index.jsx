@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 ContentContainer.propTypes = {
   comment: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  img: PropTypes.object.isRequired
+  img: PropTypes.object.isRequired,
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -24,9 +24,9 @@ const useStyles = makeStyles((theme) => ({
     height: '70%',
   },
   avatar: {
-    position: "relative",
-    top: "40px",
-    left: "100px",
+    position: 'relative',
+    top: '40px',
+    left: '100px',
   },
   comments: {
     margin: 'auto',
@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
 function ContentContainer(props) {
   const classes = useStyles();
-  const { img , comment, title } = props;
-
+  const { img, comment, title } = props;
+  
   return (
     <div>
       <Card className={classes.bgBlackWhite}>

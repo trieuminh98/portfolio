@@ -43,7 +43,7 @@ function App() {
             <Section id='commentsSection'>
               <Comments />
             </Section>
-            <Section id='contactMeSection' className='App'>
+            <Section id='contactMeSection'>
               <GetInTouch />
             </Section>
           </Grid>
