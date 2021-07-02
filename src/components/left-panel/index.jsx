@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   root: {
+    borderRight: "1px solid hsla(0,0%,100%,.1)",
     display: "flex",
     flexDirection: "column",
     height: "100%",
@@ -104,7 +105,7 @@ function LeftPanel(_props) {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h5">Minh</Typography>
+      <Typography variant="h5"></Typography>
       <div className={classes.tabsContainer}>
         <Tabs
           orientation="vertical"

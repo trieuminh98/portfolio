@@ -2,8 +2,6 @@ import IntroductionContainer from "features/introduction/components/introduction
 import Mouse from "features/introduction/components/mouse";
 import React from "react";
 
-Introduction.propTypes = {};
-
 function Introduction(props) {
   return (
     <div>

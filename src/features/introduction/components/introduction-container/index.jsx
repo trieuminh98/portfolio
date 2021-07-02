@@ -12,7 +12,7 @@ IntroductionContainer.propTypes = {};
 
 const useStyles = makeStyles((theme) => ({
   introductionContainer: {
-    minHeight: "90vh",
+    minHeight: "93vh",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
