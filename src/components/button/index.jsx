@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 CustomButton.propTypes = {
     content: PropTypes.string.isRequired,
-    handleOnClick: PropTypes.func.isRequired
+    handleOnClick: PropTypes.func
 };
 
 const useStyles = makeStyles(() => ({
