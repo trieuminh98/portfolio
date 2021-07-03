@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
 import React from 'react';
 import Title from 'components/title';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -34,14 +36,23 @@ const useStyles = makeStyles((theme) => ({
   },
   companyName: {
     margin: '10px auto 20px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.2rem',
+    },
   },
   year: {
-    float: "right"
+    float: 'right',
   },
+  list: {
+    padding: 0
+  }
 }));
 
 function Experiences() {
   const classes = useStyles();
+  const theme = useTheme();
+
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
   const CusTimelineItem = withStyles({
     missingOppositeContent: {
       '&:before': {
@@ -59,7 +70,7 @@ function Experiences() {
         <div className={classes.space}></div>
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={matches ? 6 : 12}>
           <Timeline className={classes.timeLine}>
             <CusTimelineItem>
               <TimelineSeparator>
@@ -76,7 +87,7 @@ function Experiences() {
                   Project: Famous Insurance Company
                 </Typography>
                 <Typography variant='body1' component='ul'>
-                  <ul>
+                  <ul className={classes.list}>
                     <li>Application Development & Management.</li>
                     <li>Develop software using the Agile Scrum model.</li>
                     <li>Taking the front-end position of project in Angular framework.</li>
@@ -102,7 +113,7 @@ function Experiences() {
             </CusTimelineItem>
           </Timeline>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={matches ? 6 : 12}>
           <Timeline className={classes.timeLine}>
             <CusTimelineItem>
               <TimelineSeparator>
@@ -119,7 +130,7 @@ function Experiences() {
                   Project: Australia's rail services
                 </Typography>
                 <Typography variant='body1' component='ul'>
-                  <ul>
+                  <ul className={classes.list}>
                     <li>Application Development & Management.</li>
                     <li>Taking the front-end position of project in Sharepoint platform</li>
                     <li>Editing and adding HTML, CSS for web page.</li>

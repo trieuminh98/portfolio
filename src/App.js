@@ -2,7 +2,7 @@ import { createStyles, Grid, makeStyles } from '@material-ui/core';
 import LeftPanel from 'components/left-panel/';
 import AboutMe from 'features/about-me/pages';
 import Comments from 'features/comments/pages';
-// import Experiences from 'features/experience/pages';
+import Experiences from 'features/experience/pages';
 import GetInTouch from 'features/get-in-touch/pages/index';
 import Introduction from 'features/introduction/pages';
 import { ScrollingProvider, Section } from 'react-scroll-section';
@@ -37,9 +37,9 @@ function App() {
             <Section id='aboutMeSection'>
               <AboutMe />
             </Section>
-            {/* <Section id='experienceSection'>
+            <Section id='experienceSection'>
               <Experiences />
-            </Section> */}
+            </Section>
             <Section id='commentsSection'>
               <Comments />
             </Section>
