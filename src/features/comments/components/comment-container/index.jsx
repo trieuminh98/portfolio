@@ -5,6 +5,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 ContentContainer.propTypes = {
   comment: PropTypes.string.isRequired,
@@ -20,13 +22,39 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.4rem',
   },
   large: {
-    width: '70%',
-    height: '70%',
+      width: '40%',
+      height: '80%',
+    // width: '70%',
+    // height: '70%',
+    // [theme.breakpoints.up('sm')]: {
+    //   width: '95%',
+    //   height: '46%',
+    // },
+    [theme.breakpoints.up('sm')]: {
+      width: '20%',
+      height: '80%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '95%',
+      height: '67%',
+    },
+    [theme.breakpoints.up('lg')]: {
+      width: '70%',
+      height: '70%',
+    },
   },
   avatar: {
     position: 'relative',
-    top: '40px',
-    left: '100px',
+    top: '10px',
+    // left: '100px',
+    left: '91px',
+    [theme.breakpoints.up('sm')]: {
+      left: '38%',
+    },
+    [theme.breakpoints.up('md')]: {
+      left: '5%',
+      top: '40px',
+    },
   },
   comments: {
     margin: 'auto',
@@ -34,7 +62,11 @@ const useStyles = makeStyles((theme) => ({
   title: {
     position: 'relative',
     float: 'right',
-    top: '50px',
+    // top: '50px',
+    top: "10px"
+    // [theme.breakpoints.up('xs')]: {
+    //   top: "10px"
+    // },
   },
   container: {
     height: '300px',
@@ -43,21 +75,25 @@ const useStyles = makeStyles((theme) => ({
 
 function ContentContainer(props) {
   const classes = useStyles();
+  const theme = useTheme();
+  const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
+  const matchesSm = useMediaQuery(theme.breakpoints.up('sm'));
+
   const { img, comment, title } = props;
-  
+
   return (
     <div>
       <Card className={classes.bgBlackWhite}>
         <CardContent>
           <Grid container spacing={3} className={classes.container}>
-            <Grid className={classes.avatar} item xs={3}>
+            <Grid className={classes.avatar} item xs={matchesMd ? 3 : 12}>
               <Avatar alt={img.alt} src={img.src} className={classes.large} />
             </Grid>
-            <Grid className={classes.comments} item xs={8}>
-              <Typography variant='h4' component='h4'>
+            <Grid className={classes.comments} item xs={matchesMd ? 8 : 12}>
+              <Typography variant={matchesMd ? 'h4' : (matchesSm ? 'h6' : 'body2')} component='h4'>
                 {comment}
               </Typography>
-              <Typography className={classes.title} variant='h6' component='h6'>
+              <Typography className={classes.title} variant={matchesMd ? 'h6' : 'body2'} component='h6'>
                 {title}
               </Typography>
             </Grid>

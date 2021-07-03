@@ -3,6 +3,8 @@ import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   bgBlackWhite: {
@@ -35,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
 
 function SkillContainer() {
   const classes = useStyles();
+  const theme = useTheme();
+
+  const matchesMd = useMediaQuery(theme.breakpoints.up('lg'));
+  const matchesSm = useMediaQuery(theme.breakpoints.up('sm'));
 
   const experienceObj = [
     { name: 'Angular', value: '1+ Years', src: '/react-2.png', alt: 'angular logo' },
@@ -45,7 +51,7 @@ function SkillContainer() {
 
   const listExperience = experienceObj.map(({ name, value, src, alt }, index) => {
     return (
-      <Grid key={`skill-${index}`} item xs={3}>
+      <Grid key={`skill-${index}`} item xs={matchesMd ? 3 : (matchesSm ? 6 : 12)}>
         <Card className={classes.bgBlackWhite}>
           <CardContent className={classes.achievement}>
             <div>

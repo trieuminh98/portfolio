@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CustomButton from 'components/button';
 import React from 'react';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -40,6 +42,10 @@ const useStyles = makeStyles(() => ({
 
 function QuotesContainer(props) {
   const classes = useStyles();
+  const theme = useTheme();
+
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  
   const contactObj = [
     { name: 'Phone', value: '+ 83909684072' },
     { name: 'Email', value: 'ttrieuminh1998@gmail.com' },
@@ -59,14 +65,14 @@ function QuotesContainer(props) {
   };
   return (
     <Grid container spacing={3}>
-      <Grid item xs={3}>
+      <Grid item xs={matches ? 3 : 12}>
         <img className={classes.introductionImage} src='/avatar_4.png' alt='avatar' />
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={matches ? 9 : 12}>
         <Card className={classes.bgBlackWhite}>
           <CardContent className={classes.root}>
             <Grid container spacing={3}>
-              <Grid item xs={8}>
+              <Grid item xs={matches ? 8 : 12}>
                 <div>
                   <Typography className={classes.quotes} variant='subtitle2' component='p'>
                     A skilled and motivated Front-end Developer who are specializing in developing professional web applications. Moderate knowledge
@@ -77,7 +83,7 @@ function QuotesContainer(props) {
                   </CardActions>
                 </div>
               </Grid>
-              <Grid item xs={4}>
+              <Grid item xs={matches ? 4 : 12}>
                 {listContact}
               </Grid>
             </Grid>
