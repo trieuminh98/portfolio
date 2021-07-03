@@ -1,5 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
@@ -76,7 +77,7 @@ function a11yProps(index) {
   };
 }
 
-function LeftPanel(props) {
+function ResponsiveDrawer(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -245,7 +246,7 @@ function LeftPanel(props) {
   );
 }
 
-LeftPanel.propTypes = {
+ResponsiveDrawer.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -253,4 +254,4 @@ LeftPanel.propTypes = {
   window: PropTypes.func,
 };
 
-export default LeftPanel;
+export default ResponsiveDrawer;

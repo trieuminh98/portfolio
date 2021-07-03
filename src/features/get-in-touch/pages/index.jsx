@@ -27,7 +27,6 @@ function GetInTouch(_props) {
   return (
     <div>
       <Container maxWidth='lg' className={classes.root}>
-        <Title title={'Get In Touch'} />
         <Grid container spacing={3}>
           <Grid item xs={4}>
             <Typography variant='h5' component='h2'>
@@ -37,6 +36,7 @@ function GetInTouch(_props) {
             <Typography variant='subtitle2' component='p'>
               Feel free to get in touch with me. I am always open to discussing new projects, creative ideas or opportunities to be part of your visions. Send me an email.
             </Typography>
+            <Title title={'Get In Touch'} />
           </Grid>
           <Grid item xs={8}>
             <SendMailFrom onSubmit={handleSendMailForm}/>

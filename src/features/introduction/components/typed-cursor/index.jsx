@@ -8,7 +8,7 @@ TypedCursor.propTypes = {};
 const useStyles = makeStyles(() => ({
   root: {
     fontFamily: "Waiting for the Sunrise, cursive",
-    fontSize: "1.3rem",
+    fontSize: "1.1rem",
     letterSpacing: "6px",
     fontWeight: "bold",
   }

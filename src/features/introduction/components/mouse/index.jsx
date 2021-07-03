@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     margin: "9px auto",
   },
   mouseWrapper: {
+    position: "absolute",
+    bottom: "40px",
+    zIndex: "1",
     textAlign: "center",
     marginLeft: "11px",
     color: '#ffffff',

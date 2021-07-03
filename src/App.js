@@ -1,5 +1,5 @@
 import { createStyles, Grid, makeStyles } from '@material-ui/core';
-import LeftPanel from 'components/left-panel/index';
+import LeftPanel from 'components/left-panel/';
 import AboutMe from 'features/about-me/pages';
 import Comments from 'features/comments/pages';
 import Experiences from 'features/experience/pages';
