@@ -22,11 +22,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.4rem',
   },
   large: {
-      width: '40%',
-      height: '80%',
+      width: '50%',
+      height: '90%',
     [theme.breakpoints.up('sm')]: {
-      width: '20%',
-      height: '80%',
+      width: '25%',
+      height: '90%',
     },
     [theme.breakpoints.up('md')]: {
       width: '95%',
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
   avatar: {
     position: 'relative',
-    top: '10px',
-    left: '91px',
+    top: '15px',
+    left: '73px',
     [theme.breakpoints.up('sm')]: {
       left: '38%',
     },
@@ -74,7 +74,7 @@ function ContentContainer(props) {
     <div>
       <Card className={classes.bgBlackWhite}>
         <CardContent>
-          <Grid container spacing={3} className={classes.container}>
+          <Grid container spacing={1} className={classes.container}>
             <Grid className={classes.avatar} item xs={matchesMd ? 3 : 12}>
               <Avatar alt={img.alt} src={img.src} className={classes.large} />
             </Grid>
@@ -82,7 +82,7 @@ function ContentContainer(props) {
               <Typography variant={matchesMd ? 'h4' : (matchesSm ? 'h6' : 'body2')} component='h4'>
                 {comment}
               </Typography>
-              <Typography className={classes.title} variant={matchesMd ? 'h6' : 'body2'} component='h6'>
+              <Typography className={classes.title} variant={matchesSm ? 'h6' : 'body2'} component='h6'>
                 {title}
               </Typography>
             </Grid>

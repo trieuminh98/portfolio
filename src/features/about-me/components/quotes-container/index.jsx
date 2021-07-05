@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CustomButton from 'components/button';
 import React from 'react';
+import GetAppIcon from '@material-ui/icons/GetApp';
 
 const useStyles = makeStyles((theme) => ({
   quotes: {
@@ -69,7 +70,7 @@ function QuotesContainer(props) {
                     and experience with ReactJs and Angular
                   </Typography>
                   <CardActions>
-                    <CustomButton content={'Download CV'} handleOnClick={handleOnClick} />
+                    <CustomButton content={'Download CV'} handleOnClick={handleOnClick} iconSVG={<GetAppIcon />} />
                   </CardActions>
                 </div>
               </Grid>

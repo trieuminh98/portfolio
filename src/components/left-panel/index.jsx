@@ -206,7 +206,7 @@ function LeftPanel(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' noWrap>
-            Responsive drawer
+            Minh
           </Typography>
         </Toolbar>
       </AppBar>

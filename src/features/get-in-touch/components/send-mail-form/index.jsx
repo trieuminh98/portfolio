@@ -13,6 +13,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import CloseIcon from '@material-ui/icons/Close';
+import SendIcon from '@material-ui/icons/Send';
+
 
 SendMailForm.propTypes = {};
 
@@ -100,7 +102,7 @@ function SendMailForm(props) {
           </Collapse>
         </Grid>
         <Grid item xs={12}>
-          <CustomButton className={classes.sendButton} content={'Send'} type={'submit'} />
+          <CustomButton className={classes.sendButton} content={'Send'} type={'submit'} iconSVG={<SendIcon />} />
         </Grid>
       </Grid>
     </form>

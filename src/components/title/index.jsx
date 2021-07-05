@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
+
 Title.propTypes = {
   title: PropTypes.string.isRequired,
 };

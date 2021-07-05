@@ -1,4 +1,4 @@
-import { createStyles, Grid, makeStyles, ThemeProvider, createMuiTheme  } from '@material-ui/core';
+import { createStyles, Grid, makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core';
 import LeftPanel from 'components/left-panel/';
 import AboutMe from 'features/about-me/pages';
 import Comments from 'features/comments/pages';
@@ -6,6 +6,8 @@ import Experiences from 'features/experience/pages';
 import GetInTouch from 'features/get-in-touch/pages/index';
 import Introduction from 'features/introduction/pages';
 import { ScrollingProvider, Section } from 'react-scroll-section';
+import Fade from 'react-reveal/Fade';
+
 import './App.css';
 
 const useStyles = makeStyles(() =>
@@ -25,8 +27,8 @@ const theme = createMuiTheme({
     lavenderBlue: '#877CDC',
     violetBlueCrayola: '#a5a5dd',
     stPatricksBlue: '#272B6B',
-    mint: '#29D6B9'
-  }
+    mint: '#29D6B9',
+  },
 });
 
 function App() {
@@ -42,19 +44,29 @@ function App() {
             </Grid>
             <Grid item xs={11}>
               <Section id='homeSection' className={classes.home}>
-                <Introduction />
+                <Fade bottom>
+                  <Introduction />
+                </Fade>
               </Section>
               <Section id='aboutMeSection'>
-                <AboutMe />
+              <Fade bottom>
+              <AboutMe />
+                </Fade>
               </Section>
               <Section id='experienceSection'>
-                <Experiences />
+              <Fade bottom>
+              <Experiences />
+                </Fade>
               </Section>
               <Section id='commentsSection'>
-                <Comments />
+              <Fade bottom>
+              <Comments />
+                </Fade>
               </Section>
               <Section id='contactMeSection'>
-                <GetInTouch />
+              <Fade bottom>
+              <GetInTouch />
+                </Fade>
               </Section>
             </Grid>
           </Grid>

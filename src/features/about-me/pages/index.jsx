@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '125px',
     marginBottom: '80px',
     fontSize: '1.2rem',
-  }
+  },
 }));
 
 function AboutMe() {
@@ -18,10 +18,10 @@ function AboutMe() {
 
   return (
     <Container className={classes.container} maxWidth='lg'>
-      <Title title={'About Me'} />
-      <QuotesContainer />
-      <div className={classes.spacer}></div>
-      <SkillContainer />
+        <Title title={'About Me'} />
+        <QuotesContainer />
+        <div className={classes.spacer}></div>
+        <SkillContainer />
     </Container>
   );
 }

@@ -124,7 +124,7 @@ function Experiences() {
                 <TimelineDot className={classes.timeLineDot}>
                   <WorkOutlineIcon />
                 </TimelineDot>
-                <TimelineConnector />
+                <TimelineConnector className={classes.secondaryTail} />
               </TimelineSeparator>
               <TimelineContent>
                 <Typography variant='caption' component='h4'>
