@@ -17,6 +17,8 @@ const useStyles = makeStyles((theme) => ({
     margin: "5px 0 0 30px"
   },
   paper: {
+    background: theme.color.mint,
+    color: theme.color.stPatricksBlue,
     padding: theme.spacing(1.5),
     borderRadius: "20px"
   },

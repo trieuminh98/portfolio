@@ -5,7 +5,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import HireMeButton from 'features/introduction/components/hire-me-button';
-import Mouse from 'features/introduction/components/mouse';
 import TypedCursor from 'features/introduction/components/typed-cursor';
 import Container from '@material-ui/core/Container';
 import Avatar from '@material-ui/core/Avatar';
@@ -39,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Introduction(props) {
+function Introduction() {
   const classes = useStyles();
   return (
     <Container maxWidth='lg' className={classes.root}>
@@ -60,7 +59,7 @@ function Introduction(props) {
         </Button>
       </div>
       <HireMeButton  />
-      <Mouse />
+      {/* <Mouse /> */}
     </Container>
   );
 }

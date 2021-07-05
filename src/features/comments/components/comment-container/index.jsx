@@ -16,20 +16,14 @@ ContentContainer.propTypes = {
 
 const useStyles = makeStyles((theme) => ({
   bgBlackWhite: {
-    backgroundColor: '#302f4e',
+    backgroundColor: theme.color.violetBlueCrayola,
     borderRadius: '20px',
-    color: '#ffffff',
+    color: theme.color.stPatricksBlue,
     fontSize: '1.4rem',
   },
   large: {
       width: '40%',
       height: '80%',
-    // width: '70%',
-    // height: '70%',
-    // [theme.breakpoints.up('sm')]: {
-    //   width: '95%',
-    //   height: '46%',
-    // },
     [theme.breakpoints.up('sm')]: {
       width: '20%',
       height: '80%',
@@ -46,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     position: 'relative',
     top: '10px',
-    // left: '100px',
     left: '91px',
     [theme.breakpoints.up('sm')]: {
       left: '38%',
@@ -62,11 +55,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     position: 'relative',
     float: 'right',
-    // top: '50px',
     top: "10px"
-    // [theme.breakpoints.up('xs')]: {
-    //   top: "10px"
-    // },
   },
   container: {
     height: '300px',

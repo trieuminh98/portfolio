@@ -8,6 +8,9 @@ Title.propTypes = {
 };
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    color: theme.color.stPatricksBlue,
+  },
   spacer: {
     height: '70px',
   },
@@ -19,7 +22,7 @@ function Title(props) {
 
   return (
     <Fragment>
-      <Typography variant='h3' component='h2'>
+      <Typography className={classes.root} variant='h3' component='h2'>
         {title}
       </Typography>
       <div className={classes.spacer}></div>

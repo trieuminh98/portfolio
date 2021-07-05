@@ -8,12 +8,12 @@ import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   bgBlackWhite: {
-    backgroundColor: '#302f4e',
+    background: theme.color.violetBlueCrayola,
     borderRadius: '20px',
     fontSize: '1.1rem',
     textAlign: 'center',
     textTransform: 'uppercase',
-    color: '#fff',
+    color: theme.color.stPatricksBlue,
   },
   achievement: {
     padding: '28px',

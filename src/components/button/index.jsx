@@ -8,10 +8,15 @@ CustomButton.propTypes = {
     handleOnClick: PropTypes.func
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
+    background: theme.color.mint,
     borderRadius: '20px',
-    padding: "10px 20px"
+    padding: "10px 20px",
+    color: theme.color.stPatricksBlue,
+    '&:hover': {
+      background: theme.color.mint,
+    }
   },
 }));
 

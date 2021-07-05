@@ -19,15 +19,16 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '125px',
     marginBottom: '80px',
     fontSize: '1.2rem',
+    color: theme.color.stPatricksBlue,
   },
   timeLine: {
-    backgroundColor: '#302f4e',
+    backgroundColor: theme.color.violetBlueCrayola,
     borderRadius: '20px',
     width: '93%',
     padding: '20px',
   },
   secondaryTail: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.color.mint,
   },
   space: {
     height: '2px',
@@ -44,8 +45,11 @@ const useStyles = makeStyles((theme) => ({
     float: 'right',
   },
   list: {
-    padding: 0
-  }
+    padding: 0,
+  },
+  timeLineDot: {
+    background: theme.color.mint,
+  },
 }));
 
 function Experiences() {
@@ -74,7 +78,7 @@ function Experiences() {
           <Timeline className={classes.timeLine}>
             <CusTimelineItem>
               <TimelineSeparator>
-                <TimelineDot color='secondary'>
+                <TimelineDot className={classes.timeLineDot}>
                   <WorkOutlineIcon />
                 </TimelineDot>
                 <TimelineConnector className={classes.secondaryTail} />
@@ -106,7 +110,7 @@ function Experiences() {
             </CusTimelineItem>
             <CusTimelineItem>
               <TimelineSeparator>
-                <TimelineDot color='secondary'>
+                <TimelineDot className={classes.timeLineDot}>
                   <WorkOutlineIcon />
                 </TimelineDot>
               </TimelineSeparator>
@@ -117,7 +121,7 @@ function Experiences() {
           <Timeline className={classes.timeLine}>
             <CusTimelineItem>
               <TimelineSeparator>
-                <TimelineDot color='secondary'>
+                <TimelineDot className={classes.timeLineDot}>
                   <WorkOutlineIcon />
                 </TimelineDot>
                 <TimelineConnector />
@@ -143,7 +147,7 @@ function Experiences() {
             </CusTimelineItem>
             <CusTimelineItem>
               <TimelineSeparator>
-                <TimelineDot color='secondary'>
+                <TimelineDot className={classes.timeLineDot}>
                   <WorkOutlineIcon />
                 </TimelineDot>
               </TimelineSeparator>

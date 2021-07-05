@@ -2,18 +2,13 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CustomButton from 'components/button';
 import React from 'react';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
-  root: {
-    color: '#ffffff',
-    fontSize: '1.2rem',
-  },
+const useStyles = makeStyles((theme) => ({
   quotes: {
     padding: '10px',
     fontSize: '1.2rem',
@@ -26,26 +21,20 @@ const useStyles = makeStyles(() => ({
     padding: '3px',
   },
   bgBlackWhite: {
-    backgroundColor: '#302f4e',
+    background: theme.color.violetBlueCrayola,
     borderRadius: '20px',
-    '&:before': {
-      content: '""',
-      position: 'absolute',
-      bottom: '-34%',
-      left: '37.8%',
-      borderRight: '10px solid #302f4e',
-      borderTop: '10px solid transparent',
-      borderBottom: '10px solid transparent',
-    },
+    color: theme.color.stPatricksBlue,
+    fontSize: '1.2rem',
   },
 }));
 
 function QuotesContainer(props) {
   const classes = useStyles();
   const theme = useTheme();
+  const PDF_URL = '/cv.pdf'
 
   const matches = useMediaQuery(theme.breakpoints.up('md'));
-  
+
   const contactObj = [
     { name: 'Phone', value: '+ 83909684072' },
     { name: 'Email', value: 'ttrieuminh1998@gmail.com' },
@@ -61,8 +50,9 @@ function QuotesContainer(props) {
   });
 
   const handleOnClick = () => {
-    console.log('hello');
+    window.open(PDF_URL);
   };
+
   return (
     <Grid container spacing={3}>
       <Grid item xs={matches ? 3 : 12}>

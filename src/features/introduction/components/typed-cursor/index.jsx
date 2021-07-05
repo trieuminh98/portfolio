@@ -22,7 +22,7 @@ function TypedCursor() {
   return (
     <div className={classes.root}>
 			<Typical
-        steps={[`I'm a Front-End Developder`, 2500, `I'm a Cat Lover`, 2000]}
+        steps={[`I'm a Front-End Developer`, 2500, `I'm a Cat Lover`, 2000]}
         loop={Infinity}
         wrapper="span"
       />

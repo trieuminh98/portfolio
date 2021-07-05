@@ -3,9 +3,14 @@ import { useScrollSection } from "react-scroll-section";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   borderRadius: {
+    background: theme.color.mint,
+    color: theme.color.stPatricksBlue,
     borderRadius: "20px",
+    '&:hover': {
+      background: theme.color.mint,
+    }
   },
 }));
 
@@ -16,7 +21,6 @@ function HireMeButton(props) {
   return (
     <Button
       variant="contained"
-      color="secondary"
       className={classes.borderRadius}
       onClick={() => {
         contactMeSection.onClick();

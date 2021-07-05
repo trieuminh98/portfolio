@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     '& *': {
       minWidth: '0px',
       '&.Mui-selected': {
-        color: '#f50057',
+        color: theme.color.mint,
       },
     },
   },
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   appBar: {
-    background: '#353353',
+    background: theme.color.lavenderBlue,
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   drawerPaper: {
     justifyContent: "space-around",
-    background: '#353353',
+    background: theme.color.lavenderBlue,
     width: drawerWidth,
   },
   content: {

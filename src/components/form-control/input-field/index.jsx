@@ -16,7 +16,7 @@ const CustomTextField = withStyles({
     root: {
       '& input': {
           backgroundColor: '#fff',
-          borderRadius: '10px'
+          borderRadius: '5px'
       },
       height: "60px"
     },
