@@ -12,7 +12,7 @@ const theme = createTheme({
     background: {
       default: '#FAFDD6',
     },
-    //test
+    //t
   },
   components: { 
     // Name of the component
