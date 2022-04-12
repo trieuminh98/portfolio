@@ -14,7 +14,7 @@ const theme = createTheme({
     },
   },
   components: { 
-    // Name of the components
+    // Name of the componentss
     // MuiTypography: {
     //   styleOverrides: {
     //     // Name of the slot
