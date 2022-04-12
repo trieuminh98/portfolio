@@ -12,10 +12,9 @@ const theme = createTheme({
     background: {
       default: '#FAFDD6',
     },
-    //t
   },
   components: { 
-    // Name of the component
+    // Name of the components
     // MuiTypography: {
     //   styleOverrides: {
     //     // Name of the slot
